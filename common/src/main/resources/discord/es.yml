@@ -7,12 +7,12 @@ enabled: false
 # La URL del webhook.
 webhook: ""
 
-embed-title: "**Grim Alert**"
+embed-title: "**Alerta Grim**"
 
-# El color del embed que se mandara por este webhook.
+# El color del embed que se mandará por este webhook.
 embed-color: "#00FFFF"
 
-# El contenido del embed que se mandara por este webhook.
+# El contenido del embed que se mandará por este webhook.
 violation-content:
     - "**Jugador**: %player%"
     - "**Comprobación**: %check%"

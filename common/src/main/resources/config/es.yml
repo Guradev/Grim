@@ -7,12 +7,12 @@
 alerts:
     # ¿Además de mandar las alertas a los jugadores, deberíamos mandarlas también a la consola?
     print-to-console: true
-    # This controls whether/how alerts are shared between servers connected to your proxy.
-    # You must have 'bungee-plugin-message-channel' enabled in your Velocity's configuration if Velocity is in use.
+    # Esto controla como y si las alertas se comparten entre servidores conectados a su proxy.
+    # Debe de tener “bungee-plugin-message-channel” habilitado en la configuración de su Velocity si Velocity está en uso.
     proxy:
-        # Should alerts be sent to other servers connected to your proxy?
+        # ¿Deben enviarse alertas a otros servidores conectados a tu proxy?
         send: false
-        # Should the alerts received from other servers be announced to this server?
+        # ¿Deben anunciarse a este servidor las alertas recibidas de otros servidores?
         receive: false
 
 verbose:
@@ -21,21 +21,21 @@ verbose:
 check-for-updates: true
 
 client-brand:
-    # Esto quiere decir que no se va a anunciar la marca del cliente si esta cumple alguno de los siguientes regexes:
+    # Esto quiere decir que no se va a anunciar la marca del cliente si esta cumple con alguno de los siguientes regexes:
     ignored-clients:
         - "^vanilla$"
         - "^fabric$"
         - "^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$"
         - "^Feather Fabric$"
         - "^labymod$"
-    # Grim will blacklist specific Forge versions which include built-in Reach hacks (Forge 1.18.2 to 1.19.3).
-    # Setting this option to false will allow said clients to connect to the server. Disable this at your own risk.
+    # Grim prohibiría versiones específicas de forge que incluyen hacks de reach. (Forge 1.18.2 a 1.19.3).
+    # Cambiar esta configuración a falso permitirá que dichos clientes se unan al servidor. Deshabilita a tu propio riesgo.
     disconnect-blacklisted-forge-versions: true
 
 spectators:
-    # Ocultar todos los espectadores con el permiso grim.spectator sin importar si realmente están espectando
+    # Ocultar todos los espectadores con el permiso grim.spectator sin importar si realmente están especteando.
     hide-regardless: false
-    # ¿En qué mundos deberíamos ocultar los espectadores? Si está en blanco, se ocultaran en todos los mundos.
+    # ¿En qué mundos deberíamos ocultar los espectadores? Si está en blanco se ocultarán en todos los mundos.
     allowed-worlds:
         - ""
 
@@ -43,22 +43,22 @@ spectators:
 # Por defecto, este valor se encuentra en 60 segundos.
 max-transaction-time: 60
 
-# Should the duplicate movement packet be cancelled?
-# Mojang has fixed this issue in 1.21. This was their attempt to fix the "bucket desync". https://bugs.mojang.com/browse/MC-12363
-# This setting only applies to 1.17-1.20.5 clients on 1.8 servers.
+# ¿Debería cancelarse el packet de movimientos duplicados?
+# Mojang ha arreglado este error en la 1.21. Este fue su intento de arreglar la «desincronización del cubo». https://bugs.mojang.com/browse/MC-12363
+# Esta configuración solo aplica a clientes 1.17-1.20.5 en servidores 1.8.
 cancel-duplicate-packet: true
 
-# Whether or not to ignore the rotation in duplicate packets
+# Si se ignorará o no la rotación en paquetes duplicados
 ignore-duplicate-packet-rotation: false
 
 Simulation:
     # Por cuanto deberíamos multiplicar la ventaja total cuando el jugador es legítimo
     # Asi es como se ve la configuración por defecto (eje x = segundos, eje y = bloque 1/1000): https://www.desmos.com/calculator/d4ufgxrxer
     setback-decay-multiplier: 0.999
-    # ¿Cuánta debería ser la compensacion del movimiento del jugador como para que creemos una violación?
+    # ¿Cuánta debería ser la compensación del movimiento del jugador como para que creemos una violación?
     # Medido en bloques del posible movimiento
-    # Tomamos en cuenta a OptiFine cambiando las tablas trigonometricas, pero bajar esto a 0.001 reducirá
-    # que FastMath marque el anti-cheat si esta compensación no funciona...
+    # Tomamos en cuenta a OptiFine cambiando las tablas trigonométricas, pero bajar esto a 0.001 reducirá
+    # que FastMath alerte el anti-cheat si esta compensación no funciona...
     threshold: 0.001
     # ¿Qué tan grande debería ser una violación en un tick antes de que el jugador se retroceda inmediatamente?
     # -1 para deshabilitar
@@ -66,7 +66,7 @@ Simulation:
     # ¿Qué tan grande debería ser una ventaja sobre todos los ticks para que empecemos a retroceder?
     # -1 para deshabilitar
     max-advantage: 1
-    # Después de 50 segundos con la configuración predeterminada, el jugador ira de 4 bloques -> 1 bloque de ventaja
+    # Después de 50 segundos con la configuración predeterminada, el jugador irá de 4 bloques -> 1 bloque de ventaja
     # Esto es para prevenir que el jugador obtenga muchas violaciones y no pueda ser capaz de borrarlas
     # Tope de ventaja por defecto (eje x = segundos, eje y = bloque 1/1000): https://www.desmos.com/calculator/4lovswdarj
     max-ceiling: 4
@@ -74,7 +74,7 @@ Simulation:
     # 1 para el comportamiento antiguo
     setback-violation-threshold: 1
 
-# Comprobaciones para ver si un jugador entro a un bloque durante un movimiento
+# Comprobaciones para ver si un jugador entró a un bloque durante un movimiento
 Phase:
     setbackvl: 1 # Entrar a un bloque mediante bugs puede permitir subir paredes, además esta comprobación es relativamente estable.
     decay: 0.005
@@ -97,22 +97,22 @@ RotationPlace:
 # Comprobación de NoSlow basado en predicciones
 # Grim compensa por código de red con errores aquí... difícil de sacar un falso positivo incluso haciendo spam del
 # clic derecho y la mano secundaria.
-# Mucho mas estable que otros anti-cheats, pero por favor reportar todo falso positivo... he arreglado muchos
+# Mucho mas estable que otros anti-cheats, pero por favor reporta todo falso positivo... he arreglado muchos
 # problemas del código de red aquí.
 NoSlow:
-    # ¿Cuánta debería ser la compensacion como para que se considere trampa?
+    # ¿Cuánta debería ser la compensación como para que se considere trampa?
     # Por defecto esto es más bajo que otras compensaciones
-    # Marca por 0.03-0.2 consistentemente con NoSlow activado
+    # Alerta por 0.03-0.2 consistentemente con NoSlow activado
     threshold: 0.001
     # Retroceder rápidamente en el primer item para eliminar toda ventaja que NoSlow brinde
     setbackvl: 5
-    # Decadencia cuando un jugador usa un item Y se ralentiza por el
+    # Decadencia cuando un jugador usa un item Y se ralentiza por él
     decay: 0.05
 
 Knockback:
     # Por cuanto deberíamos multiplicar la ventaja total cuando el jugador es legítimo
     setback-decay-multiplier: 0.999
-    # ¿Cuánta debería ser la compensacion del movimiento del jugador como para que creemos una violación?
+    # ¿Cuánta debería ser la compensación del movimiento del jugador como para que creemos una violación?
     # Medido en bloques del posible movimiento
     threshold: 0.001
     # ¿Qué tan grande debería ser una violación en un tick antes de que el jugador se retroceda inmediatamente?
@@ -131,25 +131,25 @@ Explosion:
 
 TimerA:
     setbackvl: 10
-    # Milisegundos que el jugador puede acumular para ser usados mas tarde cuando se quedan por detrás
-    # Podría llegar a permitir pasos por alto de fast use/fast heal/fast bow en 1.8 si esta muy alto, 120 ms
-    # parece ser un balance bastante decente.
+    # Milisegundos que el jugador puede acumular para ser usados más tarde cuando se quedan por detrás
+    # Podría llegar a permitir uso del fast use/fast heal/fast bow en 1.8 si está muy alto, 120 ms
+    # parece ser óptimo.
     drift: 120
 
-# This check limits abuse of the TimerA balance by preventing the player's movement falling too far behind realtime
+# Este check limita el abuso del balanceo de TimerA al impedir que el movimiento del jugador se retrase demasiado con respecto al tiempo real
 TimerLimit:
-    # Ping at which the check will start to limit timer balance, to prevent abuse.
-    # Can cause some setbacks for legitimate players but only if they are over this ping threshold.
-    # -1 to disable
+    # Ping sobre el cual el check empezará a limitar el balance de timer, para prevenir abuso.
+    # Puede causar algunos retrocesos para jugadores legítimos, pero solo si están sobre el umbral de ping de abajo.
+    # -1 para deshabilitar
     ping-abuse-limit-threshold: 1000
 
 NegativeTimer:
-    # Number of milliseconds lost while moving before we should start flagging
+    # Número de milisegundos perdidos durante el movimiento antes de que debamos empezar a marcar
     drift: 1200
 
-# La misma comprobación que TimerA, pero para vehiculos
+# La misma comprobación que TimerA, pero para vehículos
 VehicleTimer:
-    # Target 1.005 timer
+    # Para 1.005 timer
     setbackvl: 10
 
 PacketOrderI:
@@ -157,22 +157,22 @@ PacketOrderI:
     exempt-placing-while-digging: false
 
 Reach:
-    # Cuanto deberíamos expandir las hit-boxes? 0.0005 debería detectar un reach de 3.0005+
+    # ¿Cuánto deberíamos expandir las hit-boxes? 0.0005 debería detectar un reach de 3.0005+
     #
     # Hay una expansion forzada de 0.03 con 1.9-1.18.1 (1.18.2 no) y algunas combinaciones de clientes/servidores
     # debido a cambios en el protocolo y limitaciones. Esta comprobación es más poderosa en clientes 1.7 y 1.8
     # conectados a un servidor 1.8
     threshold: 0.0005
     # ¿Deberíamos cancelar golpes que sabemos que son imposibles?
-    # Golpes de 3.00-3.03 puede que aun asi pasen, pero se marcaran debido a limitaciones del orden de paquetes.
+    # Golpes de 3.00-3.03 puede que aún ocurran, pero se marcarán debido a limitaciones del orden de paquetes.
     block-impossible-hits: true
     # Esto mandará un paquete adicional al final de cada tick para aumentar las chances de encontrar trampas
     # Esto se inyecta en la lista de conexiones del servidor para mandar un paquete final justo antes de que el servidor haga "flush".
     # Habilitar esto causará que el uso de banda ancha de todos los jugadores aumente
     # Esto no disminuirá el rendimiento del servidor.
     # Habilitar esto ayudará a encontrar más jugadores haciendo trampa.
-    # Dejar esto deshabilitado también encontrara a jugadores haciendo trampa y no causara falsos positivos.
-    # Excepto que seas un servidor 1.8 enfocado en el PvP, este paquete adicional no es recomendado.
+    # Dejar esto deshabilitado también encontrará a jugadores haciendo trampa y no causará falsos positivos.
+    # Excepto que seas un servidor 1.8 enfocado en el PvP este paquete adicional no es recomendado.
     enable-post-packet: false
 
 exploit:
@@ -191,8 +191,8 @@ reset-item-usage-on-item-update: true
 reset-item-usage-on-attack: true
 reset-item-usage-on-slot-change: true
 
-# Grim a veces cancela paquetes ilegal como los de Timer. Después de X paquetes en un solo segundo cancelados,
-# cuando deberíamos simplemente expulsar al jugador? Esto es obligatorio ya que algunos limitadores de paquetes
+# Grim a veces cancela paquetes ilegales como los de Timer. ¿Después de X paquetes en un solo segundo cancelados,
+# cuando deberíamos simplemente expulsar al jugador? Esto es obligatorio, ya que algunos limitadores de paquetes
 # no cuentan los paquetes cancelados por Grim.
 packet-spam-threshold: 100
 # Activa esto para imprimir un stacktrace cuando un jugador sea expulsado por packet-spam-threshold

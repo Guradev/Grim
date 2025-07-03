@@ -1,11 +1,11 @@
 # %check_name% - nombre de la comprobación
-# %description% - description of the check
+# %description% - descripción del check
 # %vl% - violaciones
-# %verbose% - informacion extra
+# %verbose% - información extra
 # %player% - nombre del jugador
 # [alert] - comando especial para alertar
 # [webhook] - comando especial para alertar mediante un webhook de Discord
-# [proxy] - special command to alert to other servers connected to your proxy (BungeeCord/Velocity)
+# [proxy] - comando especial para enviar alertas a otros jugadores conectados desde un proxy (BungeeCord/Velocity)
 Punishments:
   Simulation:
     # ¿Después de cuantos segundos deberíamos quitar una violación?
